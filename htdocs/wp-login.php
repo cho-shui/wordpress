@@ -661,8 +661,8 @@ case 'register' :
 		$user_email = $_POST['user_email'];
 		$errors = register_new_user($user_login, $user_email);
 		if ( !is_wp_error($errors) ) {
-			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
-			wp_safe_redirect( $redirect_to );
+			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'index.php?getok';
+			wp_safe_redirect($redirect_to);
 			exit();
 		}
 	}
